@@ -3,7 +3,7 @@ const next = document.querySelector('#next');
 const prev = document.querySelector('#prev');
 const auto = true;
 const intervalTime = 5000;
-let slideInterval;
+let intervalID; //to clear/reset the inerval
 
 const nextSlide = () =>{
     //get current class
@@ -43,19 +43,18 @@ next.addEventListener('click',function(e){
     nextSlide();
     if(auto){
         clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide,intervalTime);
+        intervalID = setInterval(nextSlide,intervalTime);
     }
 })
 prev.addEventListener('click',function(e){
     prevSlide();
     if(auto){
         clearInterval(slideInterval);
-        slideInterval = setInterval(prevSlide,intervalTime);
+        intervalID = setInterval(prevSlide,intervalTime);
     }
 })
 
 //slide autoplay
 if(auto){
-    slideInterval = setInterval(nextSlide,intervalTime);
-    // console.log(slideInterval)
+    intervalID = setInterval(nextSlide,intervalTime);
 }
