@@ -42,7 +42,7 @@ const prevSlide = () =>{
 next.addEventListener('click',function(e){
     nextSlide();
     if(auto){
-        clearInterval(slideInterval);
+        clearInterval();
         slideInterval = setInterval(nextSlide,intervalTime);
     }
 })
