@@ -42,14 +42,14 @@ const prevSlide = () =>{
 next.addEventListener('click',function(e){
     nextSlide();
     if(auto){
-        clearInterval(slideInterval);
+        clearInterval(intervalID);
         intervalID = setInterval(nextSlide,intervalTime);
     }
 })
 prev.addEventListener('click',function(e){
     prevSlide();
     if(auto){
-        clearInterval(slideInterval);
+        clearInterval(intervalID);
         intervalID = setInterval(prevSlide,intervalTime);
     }
 })
